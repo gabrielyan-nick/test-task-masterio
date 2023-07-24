@@ -4,6 +4,7 @@ import { Providers } from "@/store/provider";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import { Box, Container } from "@mui/material";
 import HeaderBar from "@/components/ui/Header";
+import { Wrapper } from "@/components/ui/microComponents";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,14 +22,7 @@ export default function RootLayout({
         <Providers>
           <ThemeRegistry>
             <HeaderBar />
-            <Box
-              sx={{
-                backgroundColor: "primary.main",
-                minHeight: "100vh",
-              }}
-            >
-              {children}
-            </Box>
+            {children}
           </ThemeRegistry>
         </Providers>
       </body>

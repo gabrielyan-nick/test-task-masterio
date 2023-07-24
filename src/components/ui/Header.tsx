@@ -2,45 +2,40 @@
 
 import {
   AppBar,
-  Avatar,
-  Badge,
   Box,
-  Container,
   Divider,
   IconButton,
   Link,
   Menu,
   MenuItem,
-  Stack,
-  SvgIcon,
   Typography,
   styled,
-  useTheme,
+  useMediaQuery,
+  MenuProps,
+  AppBarProps,
+  LinkProps,
+  IconButtonProps,
 } from "@mui/material";
 import React, { useState } from "react";
 import { LogoIcon } from "../icons";
-import SearchIcon from "@mui/icons-material/Search";
-import TranslateIcon from "@mui/icons-material/Translate";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import GridViewIcon from "@mui/icons-material/GridView";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import {
+  Search,
+  Translate,
+  DarkMode,
+  LightMode,
+  GridView,
+  NotificationsNone,
+  PersonOutline,
+  MailOutline,
+  ChatBubbleOutline,
+  SettingsOutlined,
+  AttachMoneyOutlined,
+  HelpOutlineOutlined,
+  LogoutOutlined,
+} from "@mui/icons-material";
 import { useAppSelector } from "@/hooks/redux-hooks";
 import { useActions } from "@/hooks/useActions";
-import {
-  FlexBetweenBox,
-  FlexCentredBox,
-  FlexContainer,
-  Text600,
-  Wrapper,
-} from "./microComponents";
+import { FlexBox, Text600, Wrapper } from "./microComponents";
 import AvatarWithBadge from "./Avatar";
 
 const HeaderContainer = styled(Wrapper)({
@@ -50,7 +45,7 @@ const HeaderContainer = styled(Wrapper)({
   padding: "0 1.5rem",
 });
 
-const Header = styled(AppBar)(({ theme }) => ({
+const Header = styled(AppBar)<AppBarProps>(({ theme }) => ({
   minHeight: "64px",
   boxShadow: "rgba(58, 53, 65, 0.42) 0px 4px 8px -4px",
   zIndex: 10,
@@ -59,19 +54,19 @@ const Header = styled(AppBar)(({ theme }) => ({
   justifyContent: "center",
 }));
 
-const LogoLink = styled(Link)(({ theme }) => ({
+const LogoLink = styled(Link)<LinkProps>(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   color: theme.palette.text.primary,
   gap: "0.75rem",
 }));
 
-const IconBtn = styled(IconButton)(({ theme }) => ({
+const IconBtn = styled(IconButton)<IconButtonProps>(({ theme }) => ({
   color: theme.palette.text.primary,
   height: "40px",
 }));
 
-const StyledMenu = styled(Menu)(({ theme }) => ({
+const StyledMenu = styled(Menu)<MenuProps>(({ theme }) => ({
   marginTop: "50px",
   "& .MuiMenu-paper": { borderRadius: "5px" },
   "& ul": {
@@ -86,20 +81,20 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
 }));
 
 const menuData = [
-  { icon: <PersonOutlineIcon />, label: "Profile" },
-  { icon: <MailOutlineIcon />, label: "Inbox" },
-  { icon: <ChatBubbleOutlineIcon />, label: "Chat" },
-  { icon: <SettingsOutlinedIcon />, label: "Settings" },
-  { icon: <AttachMoneyOutlinedIcon />, label: "Pricing" },
-  { icon: <HelpOutlineOutlinedIcon />, label: "FAQ" },
-  { icon: <LogoutOutlinedIcon />, label: "Logout" },
+  { icon: <PersonOutline />, label: "Profile" },
+  { icon: <MailOutline />, label: "Inbox" },
+  { icon: <ChatBubbleOutline />, label: "Chat" },
+  { icon: <SettingsOutlined />, label: "Settings" },
+  { icon: <AttachMoneyOutlined />, label: "Pricing" },
+  { icon: <HelpOutlineOutlined />, label: "FAQ" },
+  { icon: <LogoutOutlined />, label: "Logout" },
 ];
 
 const HeaderBar = () => {
   const mode = useAppSelector((s) => s.theme.mode);
   const { setMode } = useActions();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const theme = useTheme();
+  const matches = useMediaQuery("(min-width:500px)");
 
   const handleOpenMenu = (e: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(e.currentTarget);
@@ -114,35 +109,36 @@ const HeaderBar = () => {
       <HeaderContainer maxWidth="xl">
         <LogoLink href="/" underline="none">
           <LogoIcon />
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: 600, textTransform: "uppercase" }}
-          >
-            Materio
-          </Typography>
+          {matches && (
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: 600, textTransform: "uppercase" }}
+            >
+              Materio
+            </Typography>
+          )}
         </LogoLink>
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <IconBtn>
-            <SearchIcon />
+            <Search />
           </IconBtn>
           <IconBtn>
-            <TranslateIcon />
+            <Translate />
           </IconBtn>
           <IconBtn onClick={() => setMode()}>
-            {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+            {mode === "light" ? <DarkMode /> : <LightMode />}
           </IconBtn>
           <IconBtn>
-            <GridViewIcon />
+            <GridView />
           </IconBtn>
           <IconBtn>
-            <NotificationsNoneIcon />
+            <NotificationsNone />
           </IconBtn>
 
           <Box sx={{ marginLeft: "0.5rem" }}>
             <AvatarWithBadge handleClick={handleOpenMenu} />
             <StyledMenu
-              sx={{}}
               id="menu-bar"
               anchorEl={anchorEl}
               anchorOrigin={{
@@ -157,19 +153,18 @@ const HeaderBar = () => {
               open={Boolean(anchorEl)}
               onClose={handleCloseMenu}
             >
-              <FlexContainer sx={{ padding: "0.5rem 1rem 0.5rem" }}>
+              <FlexBox sx={{ padding: "0.5rem 1rem 0.5rem" }}>
                 <AvatarWithBadge />
 
                 <Box sx={{ marginLeft: "0.75rem" }}>
                   <Text600>John Doe</Text600>
                   <Typography
-                    sx={{ fontSize: "0.8rem" }}
-                    color={theme.palette.text.secondary}
+                    sx={{ fontSize: "0.8rem", color: "text.secondary" }}
                   >
                     Admin
                   </Typography>
                 </Box>
-              </FlexContainer>
+              </FlexBox>
               <Divider />
               {menuData.map((item, i) => (
                 <div key={i}>
