@@ -11,9 +11,11 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
             primary: {
               main: "rgb(145, 85, 253)",
               light: "#1a1636d9",
+              dark: "rgb(61, 55, 89)",
             },
             secondary: {
-              main: "#26223e",
+              main: "rgb(49, 45, 75)",
+              light: "rgb(40, 36, 61)",
             },
             text: {
               primary: "rgba(231, 227, 252, 0.87)",
@@ -28,15 +30,18 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
             error: { main: "rgb(255, 76, 81)" },
             warning: { main: "rgb(255, 180, 0)" },
             success: { main: "rgb(145, 85, 253)" },
+            disabled: { main: "rgba(231, 227, 252, 0.54)" },
           }
         : {
             // light mode
             primary: {
               main: "rgb(145, 85, 253)",
               light: "rgba(255, 255, 255, 0.85)",
+              dark: "rgb(249, 250, 252)",
             },
             secondary: {
               main: "rgb(255, 255, 255)",
+              light: "rgb(244, 245, 250)",
             },
             text: {
               primary: "rgba(58, 53, 65, 0.87)",
@@ -51,6 +56,7 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
             },
             warning: { main: "rgb(255, 180, 0)" },
             success: { main: "rgb(145, 85, 253)" },
+            disabled: { main: "rgba(58, 53, 65, 0.54)" },
           }),
     },
     typography: {
@@ -58,5 +64,3 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
     },
   };
 };
-
-

@@ -4,7 +4,7 @@ import { useGetDataQuery } from "@/api/dataApi";
 import ActivityTimeline from "@/components/ui/ActivityTimeline";
 import ConnectionsList from "@/components/ui/ConnectionsList";
 import DataList from "@/components/ui/ConnectionsList";
-import ProjectsTable from "@/components/ui/ProjectsTable";
+import ProjectsTable from "@/components/ui/projectsTable/ProjectsTable";
 import TeamsList from "@/components/ui/TeamsList";
 import UserCard from "@/components/ui/UserCard";
 import UserInfo from "@/components/ui/UserInfo";
@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   const { data, isLoading } = useGetDataQuery();
-  console.log(data);
+  // console.log(data);
   return (
     <Main>
       <Wrapper>

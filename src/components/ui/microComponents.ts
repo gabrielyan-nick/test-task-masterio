@@ -60,20 +60,9 @@ export const Main = styled("main")(({ theme }) => ({
   paddingBottom: "200px",
 }));
 
-// export const BtnPurple = styled(Button)<ButtonProps>(({ theme }) => ({
-//   backgroundColor: "rgb(145, 85, 253)",
-//   color: "#fff",
-//   boxShadow: "rgba(58, 53, 65, 0.42) 0px 4px 8px -4px",
-//   padding: "0.46875rem 1.375rem",
-//   borderRadius: "5px",
-//   "&:hover": {
-//     backgroundColor: "#8148cb",
-//     boxShadow: "rgba(58, 53, 65, 0.56) 0px 6px 18px -8px;",
-//   },
-// }));
-
 export const WrapperBg = styled(Card)<CardProps>(({ theme }) => ({
   backgroundColor: theme.palette.secondary.main,
+  backgroundImage: "none",
   borderRadius: "6px",
   boxShadow: "rgba(58, 53, 65, 0.1) 0px 2px 10px 0px",
 }));
@@ -105,12 +94,11 @@ export const SectionTitle = styled(Typography)<TypographyProps>(
   })
 );
 
-export const HeaderMenu = styled(Menu)<MenuProps>(({ theme }) => ({
+export const ActionsMenu = styled(Menu)<MenuProps>(({ theme }) => ({
   marginTop: "35px",
   "& .MuiMenu-paper": { borderRadius: "5px" },
   "& ul": {
     backgroundColor: theme.palette.secondary.main,
-    padding: "8px 0",
   },
   "& .MuiDivider-root": {
     margin: "4px 0",

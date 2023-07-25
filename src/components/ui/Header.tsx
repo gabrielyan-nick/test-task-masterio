@@ -47,7 +47,7 @@ const HeaderContainer = styled(Wrapper)({
 
 const Header = styled(AppBar)<AppBarProps>(({ theme }) => ({
   minHeight: "64px",
-  boxShadow: "rgba(58, 53, 65, 0.42) 0px 4px 8px -4px",
+  boxShadow: "rgba(19, 17, 32, 0.42) 0px 4px 8px -4px",
   zIndex: 10,
   backgroundColor: theme.palette.primary.light,
   backdropFilter: "blur(8px)",

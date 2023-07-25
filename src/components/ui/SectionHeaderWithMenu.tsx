@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ContentHeader, HeaderMenu } from "./microComponents";
+import { ActionsMenu, ContentHeader } from "./microComponents";
 import { Divider, IconButton, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
@@ -32,10 +32,10 @@ const SectionHeaderWithMenu = ({ title }: ISectionHeaderWithMenuProps) => {
             aria-haspopup="true"
             onClick={handleOpenMenu}
           >
-            <MoreVertIcon />
+            <MoreVertIcon color="disabled" />
           </IconButton>
 
-          <HeaderMenu
+          <ActionsMenu
             id={`${title}-menu`}
             anchorEl={anchorEl}
             MenuListProps={{
@@ -60,7 +60,7 @@ const SectionHeaderWithMenu = ({ title }: ISectionHeaderWithMenuProps) => {
             <MenuItem onClick={handleCloseMenu}>Suggest edits</MenuItem>
             <Divider />
             <MenuItem onClick={handleCloseMenu}>Report bug</MenuItem>
-          </HeaderMenu>
+          </ActionsMenu>
         </>
       }
     />
