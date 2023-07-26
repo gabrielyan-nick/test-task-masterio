@@ -3,9 +3,9 @@
 import {
   AppBar,
   Box,
+  Link,
   Divider,
   IconButton,
-  Link,
   Menu,
   MenuItem,
   Typography,
@@ -16,7 +16,7 @@ import {
   LinkProps,
   IconButtonProps,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { LogoIcon } from "../icons";
 import {
   Search,
@@ -168,12 +168,18 @@ const HeaderBar = () => {
               <Divider />
               {menuData.map((item, i) => (
                 <div key={i}>
-                  <MenuItem onClick={handleCloseMenu}>
-                    {item.icon}
-                    <Typography sx={{ marginLeft: "0.5rem" }}>
-                      {item.label}
-                    </Typography>
-                  </MenuItem>
+                  <Link
+                    href={item.label === "Settings" ? "/settings" : "/"}
+                    underline="none"
+                    color="inherit"
+                  >
+                    <MenuItem onClick={handleCloseMenu}>
+                      {item.icon}
+                      <Typography sx={{ marginLeft: "0.5rem" }}>
+                        {item.label}
+                      </Typography>
+                    </MenuItem>
+                  </Link>
                   {(i === 2 || i === 5) && <Divider />}
                 </div>
               ))}

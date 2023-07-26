@@ -62,7 +62,7 @@ const TeamsList = ({ data }: { data: ITeamsListProps[] | undefined }) => {
                 </Typography>
               </div>
             </FlexBox>
-            <Box component="a" href="/">
+            <Box component="a" href="/" sx={{ alignSelf: "flex-start" }}>
               <StyledChip
                 color={item.ChipColor}
                 label={item.chipText}

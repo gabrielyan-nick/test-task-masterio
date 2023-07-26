@@ -9,11 +9,10 @@ import {
   CardHeader,
   CardHeaderProps,
   CardProps,
-  Container,
-  Divider,
   Menu,
   MenuProps,
-  Paper,
+  Tab,
+  TabProps,
   Typography,
   TypographyProps,
   styled,
@@ -57,7 +56,6 @@ export const Main = styled("main")(({ theme }) => ({
   minHeight: "100vh",
   backgroundColor: theme.palette.background.paper,
   paddingTop: "64px",
-  paddingBottom: "200px",
 }));
 
 export const WrapperBg = styled(Card)<CardProps>(({ theme }) => ({
@@ -102,5 +100,19 @@ export const ActionsMenu = styled(Menu)<MenuProps>(({ theme }) => ({
   },
   "& .MuiDivider-root": {
     margin: "4px 0",
+  },
+}));
+
+export const StyledTab = styled(Tab)<TabProps>(({ theme }) => ({
+  display: "flex",
+  minWidth: "130px",
+  paddingTop: "0.5rem",
+  paddingBottom: "0.5rem",
+  borderRadius: "6px",
+  minHeight: "40px",
+  color: theme.palette.text.disabled,
+  "&.Mui-selected": {
+    backgroundColor: "rgb(145, 85, 253)",
+    color: "#fff",
   },
 }));

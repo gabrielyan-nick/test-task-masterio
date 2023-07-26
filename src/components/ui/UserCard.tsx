@@ -135,7 +135,10 @@ const UserCard = () => {
               </FlexCentredBox>
             </ItemsWrapper>
           </ContentBox>
-          <Button variant="contained">
+          <Button
+            variant="contained"
+            sx={{ "&:hover": { backgroundColor: "secondary.dark" } }}
+          >
             <PersonAddAltOutlined
               fontSize="small"
               sx={{ marginRight: "8px" }}

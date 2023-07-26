@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   const { data, isLoading } = useGetDataQuery();
-  // console.log(data);
+
   return (
     <Main>
       <Wrapper>
