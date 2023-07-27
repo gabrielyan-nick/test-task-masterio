@@ -8,12 +8,7 @@ const Footer = () => {
   const match = useMediaQuery("(min-width: 900px)");
 
   return (
-    <Box
-      component="footer"
-      sx={{
-        backgroundColor: "background.paper",
-      }}
-    >
+    <Box component="footer">
       <Wrapper
         sx={{
           padding: "1rem",

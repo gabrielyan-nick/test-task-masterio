@@ -23,12 +23,12 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
               secondary: " rgba(231, 227, 252, 0.38)",
               disabled: "rgba(231, 227, 252, 0.6)",
             },
-            background: { paper: "#28243d" },
+            background: { default: "#28243d" },
             info: {
               main: "rgb(22, 177, 255)",
               light: "rgba(231, 227, 252, 0.12)",
             },
-            error: { main: "rgb(255, 76, 81)" },
+            error: { main: "rgb(255, 76, 81)", dark: "rgb(224, 67, 71)" },
             warning: { main: "rgb(255, 180, 0)" },
             success: { main: "rgb(145, 85, 253)" },
             disabled: { main: "rgba(231, 227, 252, 0.54)" },
@@ -50,8 +50,10 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
               secondary: "rgba(58, 53, 65, 0.38)",
               disabled: "rgba(58, 53, 65, 0.6)",
             },
-            background: { paper: "#F4F5FA" },
-            error: { main: "rgb(255, 76, 81)" },
+            background: {
+              default: "#F4F5FA",
+            },
+            error: { main: "rgb(255, 76, 81)", dark: "rgb(224, 67, 71)" },
             info: {
               main: "rgb(22, 177, 255)",
               light: "rgba(58, 53, 65, 0.12)",

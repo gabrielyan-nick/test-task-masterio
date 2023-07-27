@@ -54,7 +54,6 @@ export const Wrapper = styled(Box)<BoxProps>({
 export const Main = styled("main")(({ theme }) => ({
   width: "100%",
   minHeight: "100vh",
-  backgroundColor: theme.palette.background.paper,
   paddingTop: "64px",
 }));
 

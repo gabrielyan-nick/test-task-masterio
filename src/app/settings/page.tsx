@@ -6,10 +6,12 @@ import {
   StyledTab,
   Wrapper,
 } from "@/components/ui/microComponents";
-import { Box, Tab, TabProps, Tabs, styled } from "@mui/material";
+import { Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { PersonOutline, BookmarkBorderOutlined } from "@mui/icons-material";
 import AccountForm from "@/components/ui/AccountForm";
+
+import DeleteAccountForm from "@/components/ui/DeleteAccountForm";
 
 export default function SettingsPage() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -43,7 +45,12 @@ export default function SettingsPage() {
           />
         </Tabs>
 
-        {tabIndex === 0 && <AccountForm />}
+        {tabIndex === 0 && (
+          <>
+            <AccountForm />
+            <DeleteAccountForm />
+          </>
+        )}
 
         {tabIndex === 1 && <ContentWrapper></ContentWrapper>}
       </Wrapper>

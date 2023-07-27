@@ -10,6 +10,7 @@ const BtnContained = ({ children, ...props }: IBtnContainedProps) => {
       {...props}
       variant="contained"
       sx={{
+        minWidth: "152.5px",
         padding: "0.46875rem 1.375rem",
         "&:hover": { backgroundColor: "secondary.dark" },
         ...props.sx,
