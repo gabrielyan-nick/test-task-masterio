@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ContentHeader, FlexBox, WrapperBg } from "../microComponents";
+import { ContentHeader, FlexBox, WrapperBg } from "../sharedStyledComponents";
 import {
   TextField,
   TextFieldProps,

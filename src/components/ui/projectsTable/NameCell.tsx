@@ -1,5 +1,5 @@
 import { Avatar, Typography } from "@mui/material";
-import { FlexBox } from "../microComponents";
+import { FlexBox } from "../sharedStyledComponents";
 
 interface INameCellProps {
   avatar?: string;

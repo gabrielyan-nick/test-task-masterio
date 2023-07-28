@@ -1,4 +1,4 @@
-import { Palette } from "@mui/material";
+import { BoxProps, Palette } from "@mui/material";
 
 export interface IThemeState {
   mode: "light" | "dark";
@@ -21,5 +21,14 @@ export type TChipColors =
 export interface MyPalette extends Palette {
   disabled: {
     main: string;
+  };
+  primary: {
+    main: string;
+    light: string;
+    dark: string;
+    contrastText: string;
+    100: string;
+    200: string;
+    300: string;
   };
 }

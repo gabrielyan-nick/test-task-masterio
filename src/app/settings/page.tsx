@@ -5,13 +5,14 @@ import {
   Main,
   StyledTab,
   Wrapper,
-} from "@/components/ui/microComponents";
+} from "@/components/ui/sharedStyledComponents";
 import { Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { PersonOutline, BookmarkBorderOutlined } from "@mui/icons-material";
 import AccountForm from "@/components/ui/AccountForm";
 
 import DeleteAccountForm from "@/components/ui/DeleteAccountForm";
+import BillingPlan from "@/components/ui/BillingPlan";
 
 export default function SettingsPage() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -52,7 +53,11 @@ export default function SettingsPage() {
           </>
         )}
 
-        {tabIndex === 1 && <ContentWrapper></ContentWrapper>}
+        {tabIndex === 1 && (
+          <>
+            <BillingPlan />
+          </>
+        )}
       </Wrapper>
     </Main>
   );

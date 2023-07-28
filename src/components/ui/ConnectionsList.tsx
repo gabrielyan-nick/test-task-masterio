@@ -6,7 +6,7 @@ import {
   FlexBetweenBox,
   Text600,
   FlexCentredBox,
-} from "./microComponents";
+} from "./sharedStyledComponents";
 import {
   Avatar,
   Button,

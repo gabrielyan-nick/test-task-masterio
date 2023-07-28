@@ -1,34 +1,49 @@
 import React, { SyntheticEvent, useState } from "react";
-import { ContentHeader, ContentWrapper, WrapperBg } from "./microComponents";
 import {
   Box,
-  Button,
   Checkbox,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   FormControl,
   FormControlLabel,
   FormHelperText,
 } from "@mui/material";
+import {
+  CheckCircleOutlineOutlined,
+  HighlightOffOutlined,
+} from "@mui/icons-material";
+import ModalTemplate from "./modals/ModalTemplate";
 import BtnContained from "./BtnContained";
+import { ContentHeader, ContentWrapper, WrapperBg } from "./sharedStyledComponents";
+import ConfirmModal from "./modals/ConfirmModal";
 
 const DeleteAccountForm = () => {
   const [checked, setChecked] = useState(false);
   const [isHelperTextShow, setIsHelperTextShow] = useState(false);
   const [isDelBtnTouch, setIsDelBtnTouch] = useState(false);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
 
-  // const handleDialogOpen = () => {
-  //   setIsDialogOpen(true);
-  // };
-
-  const handleDialogClose = () => {
-    setIsDialogOpen(false);
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
-  const handleChange = (
+  const handleSuccessModalOpen = () => {
+    setIsSuccessModalOpen(true);
+  };
+
+  const handleCancelModalOpen = () => {
+    setIsCancelModalOpen(true);
+  };
+
+  const handleSuccessModalClose = () => {
+    setIsSuccessModalOpen(false);
+  };
+
+  const handleCancelModalClose = () => {
+    setIsCancelModalOpen(false);
+  };
+
+  const handleCheckboxChange = (
     event: SyntheticEvent<Element, Event>,
     checked: boolean
   ) => {
@@ -38,7 +53,7 @@ const DeleteAccountForm = () => {
   const handleDelBtn = () => {
     setIsDelBtnTouch(true);
     setIsHelperTextShow(true);
-    setIsDialogOpen(true);
+    checked && setIsModalOpen(true);
   };
 
   return (
@@ -52,7 +67,7 @@ const DeleteAccountForm = () => {
                 <FormControlLabel
                   control={<Checkbox size="small" name="del" />}
                   checked={checked}
-                  onChange={handleChange}
+                  onChange={handleCheckboxChange}
                   label="I confirm my account deactivation"
                   sx={{
                     "& .MuiCheckbox-root": {
@@ -88,16 +103,35 @@ const DeleteAccountForm = () => {
         </ContentWrapper>
       </WrapperBg>
 
-      <Dialog open={isDialogOpen} onClose={handleDialogClose}>
-        <DialogContent>
-          Let Google help apps determine location. This means sending anonymous
-          location data to Google, even when no apps are running.
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleDialogClose}>Disagree</Button>
-          <Button onClick={handleDialogClose}>Agree</Button>
-        </DialogActions>
-      </Dialog>
+      <ConfirmModal
+        open={isModalOpen}
+        onClose={handleModalClose}
+        openSuccessModal={handleSuccessModalOpen}
+        openCancelModal={handleCancelModalOpen}
+      />
+
+      <ModalTemplate
+        open={isSuccessModalOpen}
+        onClose={handleSuccessModalClose}
+        icon={
+          <CheckCircleOutlineOutlined
+            color="success"
+            sx={{ fontSize: "5.5rem" }}
+          />
+        }
+        title="Deleted!"
+        text="Your subscription cancelled successfully."
+      />
+
+      <ModalTemplate
+        open={isCancelModalOpen}
+        onClose={handleCancelModalClose}
+        icon={
+          <HighlightOffOutlined color="error" sx={{ fontSize: "5.5rem" }} />
+        }
+        title="Cancelled"
+        text="Unsubscription Cancelled!!"
+      />
     </>
   );
 };

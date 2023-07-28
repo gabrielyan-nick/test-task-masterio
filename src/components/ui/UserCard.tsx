@@ -11,7 +11,7 @@ import {
   FlexBox,
   TextPrimary,
   WrapperBg,
-} from "./microComponents";
+} from "./sharedStyledComponents";
 import {
   InvertColorsOutlined,
   RoomOutlined,

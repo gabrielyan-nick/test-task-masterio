@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { ContentWrapper, FlexBox, Text600, WrapperBg } from "./microComponents";
+import { ContentWrapper, FlexBox, Text600, WrapperBg } from "./sharedStyledComponents";
 import BtnOutline from "./BtnOutline";
 import BtnContained from "./BtnContained";
 import {
@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { country, currency, language, timezone } from "@/data/selectData";
-import TextInput from "./form/TextInput";
-import SelectInput from "./form/SelectInput";
+import TextInput from "./formInputs/TextInput";
+import SelectInput from "./formInputs/SelectInput";
 import { usePostAccountDataMutation } from "@/api/dataApi";
 
 export interface IFormInput {
@@ -245,14 +245,20 @@ const AccountForm = () => {
               />
             </Grid>
             <Grid item xs={12}>
-              <BtnContained type="submit" sx={{ marginRight: "1rem" }}>
+              <BtnContained
+                type="submit"
+                sx={{ marginRight: "1rem", minWidth: "152.5px" }}
+                disabled={isLoading}
+              >
                 {isLoading ? (
                   <CircularProgress size={25} color="secondary" />
                 ) : (
                   "SAVE CHANGES"
                 )}
               </BtnContained>
-              <BtnOutline onClick={() => reset()}>RESET</BtnOutline>
+              <BtnOutline onClick={() => reset()} disabled={isLoading}>
+                RESET
+              </BtnOutline>
               {showSuccessMessage && (
                 <Text600
                   m="15px 0 0 25px"

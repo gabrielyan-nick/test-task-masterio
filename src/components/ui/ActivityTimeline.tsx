@@ -6,7 +6,7 @@ import {
   FlexBox,
   Text600,
   WrapperBg,
-} from "./microComponents";
+} from "./sharedStyledComponents";
 import { Avatar, Typography, styled } from "@mui/material";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import {
@@ -54,7 +54,7 @@ const ActivityTimeline = () => {
           />
 
           <TimelineItemBox
-            dotColor="success"
+            dotColor="primary"
             dotShadowColor="145, 85, 253, 0.12"
             date="April, 18"
             itemImg="https://demos.themeselection.com/marketplace/materio-mui-react-nextjs-admin-template/demo-5/images/avatars/1.png"

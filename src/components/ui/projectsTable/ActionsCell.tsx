@@ -5,7 +5,7 @@ import {
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
-import { ActionsMenu } from "../microComponents";
+import { ActionsMenu } from "../sharedStyledComponents";
 
 const ActionsCell = ({ id }: { id: number }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

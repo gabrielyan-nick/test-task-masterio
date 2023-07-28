@@ -35,7 +35,7 @@ import {
 } from "@mui/icons-material";
 import { useAppSelector } from "@/hooks/redux-hooks";
 import { useActions } from "@/hooks/useActions";
-import { FlexBox, Text600, Wrapper } from "./microComponents";
+import { FlexBox, Text600, Wrapper } from "./sharedStyledComponents";
 import AvatarWithBadge from "./Avatar";
 
 const HeaderContainer = styled(Wrapper)({

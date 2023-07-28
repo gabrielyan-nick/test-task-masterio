@@ -8,7 +8,7 @@ import ProjectsTable from "@/components/ui/projectsTable/ProjectsTable";
 import TeamsList from "@/components/ui/TeamsList";
 import UserCard from "@/components/ui/UserCard";
 import UserInfo from "@/components/ui/UserInfo";
-import { Main, Wrapper, WrapperBg } from "@/components/ui/microComponents";
+import { Main, Wrapper, WrapperBg } from "@/components/ui/sharedStyledComponents";
 import { IData } from "@/types/data.types";
 import { Grid } from "@mui/material";
 import { useEffect } from "react";

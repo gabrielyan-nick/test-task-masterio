@@ -9,6 +9,10 @@ import {
   CardHeader,
   CardHeaderProps,
   CardProps,
+  Dialog,
+  DialogContent,
+  DialogContentProps,
+  DialogProps,
   Menu,
   MenuProps,
   Tab,
@@ -34,6 +38,10 @@ export const FlexBetweenBox = styled(FlexCentredBox)({
 export const Text600 = styled(Typography)<TypographyProps>({
   fontWeight: 600,
 });
+
+export const TextLight = styled(Typography)<TypographyProps>(({ theme }) => ({
+  color: theme.palette.text.disabled,
+}));
 
 export const TextPrimary = styled(Text600)(({ theme }) => ({
   fontSize: "1rem",
@@ -113,5 +121,53 @@ export const StyledTab = styled(Tab)<TabProps>(({ theme }) => ({
   "&.Mui-selected": {
     backgroundColor: "rgb(145, 85, 253)",
     color: "#fff",
+  },
+}));
+
+export const StyledDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
+  "& .MuiDialog-paper": {
+    borderRadius: "6px",
+    backgroundColor: theme.palette.secondary.main,
+    backgroundImage: "none",
+    boxShadow: "rgba(58, 53, 65, 0.1) 0px 2px 10px 0px",
+    [`@media (max-width: 600px)`]: {
+      margin: "1rem",
+      width: "calc(100% - 2rem)",
+      maxWidth: "calc(100% - 2rem)",
+    },
+  },
+  "& .MuiModal-backdrop": {
+    backgroundColor: theme.palette.grey[100],
+  },
+  "& .MuiDialogContent-root": {
+    padding: "2rem 1.25rem 1.5rem 1.25rem",
+    [`@media (min-width: 600px)`]: {
+      padding: "3.125rem 3.75rem 1.5rem 3.75rem",
+    },
+  },
+  "& .MuiDialogActions-root": {
+    padding: "0 1.25rem 2rem 1.25rem",
+    justifyContent: "center",
+    [`@media (min-width: 600px)`]: {
+      padding: "0 3.75rem 3.125rem 3.75rem",
+    },
+  },
+  "& h4": {
+    fontSize: "1.5625rem",
+    [`@media (min-width: 600px)`]: {
+      fontSize: "1.8219rem",
+    },
+    [`@media (min-width: 1200px)`]: {
+      fontSize: "2.0243rem",
+    },
+  },
+  "& h5": {
+    fontSize: "1.25rem",
+    [`@media (min-width: 600px)`]: {
+      fontSize: "1.3118rem",
+    },
+    [`@media (min-width: 900px)`]: {
+      fontSize: "1.4993rem",
+    },
   },
 }));

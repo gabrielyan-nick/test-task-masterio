@@ -6,7 +6,7 @@ import {
   SectionTitle,
   Text600,
   WrapperBg,
-} from "./microComponents";
+} from "./sharedStyledComponents";
 import { Box, CardContent, Typography, styled } from "@mui/material";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";

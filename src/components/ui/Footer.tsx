@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FlexBetweenBox, FlexBox, Wrapper } from "./microComponents";
+import { FlexBetweenBox, FlexBox, Wrapper } from "./sharedStyledComponents";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 
 const Footer = () => {

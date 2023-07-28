@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ActionsMenu, ContentHeader } from "./microComponents";
+import { ActionsMenu, ContentHeader } from "./sharedStyledComponents";
 import { Divider, IconButton, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
