@@ -13,6 +13,7 @@ import AccountForm from "@/components/ui/AccountForm";
 
 import DeleteAccountForm from "@/components/ui/DeleteAccountForm";
 import BillingPlan from "@/components/ui/BillingPlan";
+import PaymentMethod from "@/components/ui/paymentMethod/PaymentMethod";
 
 export default function SettingsPage() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -56,6 +57,7 @@ export default function SettingsPage() {
         {tabIndex === 1 && (
           <>
             <BillingPlan />
+            <PaymentMethod />
           </>
         )}
       </Wrapper>

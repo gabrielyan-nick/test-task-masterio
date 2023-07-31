@@ -1,7 +1,12 @@
 "use client";
 
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { ContentWrapper, FlexBox, Text600, WrapperBg } from "./sharedStyledComponents";
+import {
+  ContentWrapper,
+  FlexBox,
+  Text600,
+  WrapperBg,
+} from "./sharedStyledComponents";
 import BtnOutline from "./BtnOutline";
 import BtnContained from "./BtnContained";
 import {
@@ -14,7 +19,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { country, currency, language, timezone } from "@/data/selectData";
 import TextInput from "./formInputs/TextInput";
 import SelectInput from "./formInputs/SelectInput";
-import { usePostAccountDataMutation } from "@/api/dataApi";
+import { usePostDataMutation } from "@/api/dataApi";
 
 export interface IFormInput {
   firstName: string;
@@ -48,7 +53,7 @@ const defaultValues = {
 
 const AccountForm = () => {
   const [avatar, setAvatar] = useState<string | null>(null);
-  const [submit, { isLoading, isSuccess }] = usePostAccountDataMutation();
+  const [submit, { isLoading, isSuccess }] = usePostDataMutation();
   const { handleSubmit, reset, control } = useForm<IFormInput>({
     defaultValues: defaultValues,
   });

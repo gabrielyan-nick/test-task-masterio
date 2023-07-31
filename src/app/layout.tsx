@@ -1,4 +1,5 @@
 import "./globals.scss";
+import "react-credit-cards-2/dist/es/styles-compiled.css";
 import type { Metadata } from "next";
 import { Providers } from "@/store/provider";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";

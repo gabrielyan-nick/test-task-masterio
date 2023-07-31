@@ -13,6 +13,8 @@ import {
   DialogContent,
   DialogContentProps,
   DialogProps,
+  FormLabel,
+  FormLabelProps,
   Menu,
   MenuProps,
   Tab,
@@ -171,3 +173,4 @@ export const StyledDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
     },
   },
 }));
+

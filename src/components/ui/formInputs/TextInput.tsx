@@ -35,6 +35,7 @@ const TextInput = ({
           placeholder={placeholder}
           InputProps={InputProps}
           sx={{
+            "& .MuiInputBase-root": { borderRadius: "6px" },
             "& label": { color: "text.disabled" },
             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
               borderColor: "text.secondary",

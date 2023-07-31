@@ -1,4 +1,5 @@
 import { IFormInput } from "@/components/ui/AccountForm";
+import { ICardInputs } from "@/components/ui/paymentMethod/PaymentMethod";
 import { IData } from "@/types/data.types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
@@ -9,7 +10,7 @@ export const dataApi = createApi({
     getData: builder.query<IData, void>({
       query: () => `/`,
     }),
-    postAccountData: builder.mutation<void, IFormInput>({
+    postData: builder.mutation<void, IFormInput | ICardInputs>({
       query: (data) => ({
         url: "/",
         method: "POST",
@@ -19,4 +20,4 @@ export const dataApi = createApi({
   }),
 });
 
-export const { useGetDataQuery, usePostAccountDataMutation } = dataApi;
+export const { useGetDataQuery, usePostDataMutation } = dataApi;
