@@ -7,7 +7,7 @@ import {
   Text600,
   TextLight,
   WrapperBg,
-} from "./sharedStyledComponents";
+} from "../sharedStyledComponents";
 import {
   Alert,
   AlertTitle,
@@ -16,11 +16,11 @@ import {
   Grid,
   LinearProgress,
 } from "@mui/material";
-import BtnContained from "./BtnContained";
-import BtnOutline from "./BtnOutline";
-import BillingPlanModal from "./modals/BillingPlanModal/BillingPlanModal";
-import ConfirmModal from "./modals/ConfirmModal";
-import ModalTemplate from "./modals/ModalTemplate";
+import BtnContained from "../BtnContained";
+import BtnOutline from "../BtnOutline";
+import BillingPlanModal from "./BillingPlanModal";
+import ConfirmModal from "../modals/ConfirmModal";
+import ModalTemplate from "../modals/ModalTemplate";
 import {
   CheckCircleOutlineOutlined,
   HighlightOffOutlined,

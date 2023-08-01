@@ -13,12 +13,11 @@ import {
   FlexBox,
   FlexCentredBox,
   TextLight,
-} from "../../sharedStyledComponents";
+} from "../sharedStyledComponents";
 import { FiberManualRecordOutlined } from "@mui/icons-material";
 import { _clientUrl } from "@/constants";
-import BtnOutline from "../../BtnOutline";
-import BtnContained from "../../BtnContained";
-import { MyPalette } from "@/types/theme.types";
+import BtnOutline from "../BtnOutline";
+import BtnContained from "../BtnContained";
 
 interface IBillingPlanItemProps {
   title: "Basic" | "Standard" | "Enterprise";
@@ -60,7 +59,7 @@ const StyledChip = styled(Chip)<ChipProps>(({ theme }) => ({
   position: "absolute",
   top: "12px",
   right: "12px",
-  backgroundColor: (theme.palette as MyPalette).primary[300],
+  backgroundColor: theme.palette.primary[300],
   color: theme.palette.primary.main,
   "& .MuiChip-label": {
     padding: "0 0.4375rem",

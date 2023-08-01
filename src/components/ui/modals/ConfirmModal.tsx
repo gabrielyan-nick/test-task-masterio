@@ -22,7 +22,14 @@ const ConfirmDelAccountModal = ({
 
   return (
     <StyledDialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
-      <DialogContent>
+      <DialogContent
+        sx={{
+          padding: "2rem 1.25rem 1.25rem",
+          [`@media (min-width: 600px)`]: {
+            padding: "3.125rem 3.75rem 1.5rem",
+          },
+        }}
+      >
         <FlexCentredBox sx={{ flexDirection: "column", textAlign: "center" }}>
           <ErrorOutlineOutlinedIcon
             color="warning"

@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { ContentHeader, FlexBox, WrapperBg } from "../sharedStyledComponents";
 import {
-  TextField,
-  TextFieldProps,
-  Typography,
-  styled,
-  useMediaQuery,
-} from "@mui/material";
+  ContentHeader,
+  FlexBox,
+  StyledInput,
+  WrapperBg,
+  StyledDataGrid,
+} from "../sharedStyledComponents";
+import { Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, DataGridProps, GridColDef } from "@mui/x-data-grid";
 import NameCell from "./NameCell";
 import TeamCell from "./TeamCell";
 import ActionsCell from "./ActionsCell";
-import { MyPalette } from "@/types/theme.types";
 import StatusCell from "./StatusCell";
 
 const columns: GridColDef[] = [
@@ -156,58 +155,6 @@ const rows = [
   },
 ];
 
-const StyledDataGrid = styled(DataGrid)<DataGridProps>(({ theme }) => ({
-  border: "none",
-  minHeight: "161px",
-  "& .MuiDataGrid-columnHeaderCheckbox, .MuiDataGrid-cellCheckbox": {
-    maxWidth: "58px !important",
-    minWidth: "58px !important",
-  },
-  "& .MuiDataGrid-columnHeaderTitle": {
-    fontWeight: 600,
-    fontSize: "0.75rem",
-    letterSpacing: "0.17px",
-  },
-  "& .MuiCheckbox-root": {
-    color: theme.palette.primary,
-  },
-  "& .MuiDataGrid-columnHeaders": {
-    backgroundColor: theme.palette.primary.dark,
-  },
-  "& .MuiDataGrid-menuIcon > button": {
-    color: (theme.palette as MyPalette).disabled.main,
-  },
-  "& .MuiDataGrid-columnHeader:not(.MuiDataGrid-columnHeaderCheckbox)": {
-    paddingLeft: "1rem",
-    paddingRight: "1rem",
-  },
-  "& .MuiDataGrid-cell:not(.MuiDataGrid-cellCheckbox)": {
-    paddingLeft: "1rem",
-    paddingRight: "1rem",
-  },
-  "& .MuiDataGrid-cell:focus-within, .MuiDataGrid-columnHeader:focus-within": {
-    outline: "none",
-  },
-  [`@media (min-width: 1200px)`]: {
-    "& .MuiDataGrid-virtualScroller": {
-      overflow: "hidden",
-    },
-  },
-}));
-
-const SearchField = styled(TextField)<TextFieldProps>(({ theme }) => ({
-  "& input": {
-    padding: "8.5px 15px",
-  },
-  "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-    borderColor: (theme.palette as MyPalette).disabled.main,
-  },
-  "&& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-    borderColor: "rgb(145, 85, 253)",
-  },
-  "& > div": { borderRadius: "6px" },
-}));
-
 const ProjectsTable = () => {
   const [searchString, setSearchString] = useState("");
   const [filtredRows, setFiltredRows] = useState(rows);
@@ -239,7 +186,8 @@ const ProjectsTable = () => {
             <Typography variant="body2" sx={{ color: "text.disabled" }}>
               Search:
             </Typography>
-            <SearchField
+            <StyledInput
+              size="small"
               onChange={(e) => setSearchString(e.currentTarget.value)}
             />
           </FlexBox>

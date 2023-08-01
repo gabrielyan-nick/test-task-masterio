@@ -14,8 +14,8 @@ import {
   FlexCentredBox,
   StyledDialog,
   TextLight,
-} from "../../sharedStyledComponents";
-import { IModalProps } from "../modal.types";
+} from "../sharedStyledComponents";
+import { IModalProps } from "../modals/modal.types";
 import React, { SyntheticEvent, useState } from "react";
 import BillingPlanItem from "./BillingPlanItem";
 
@@ -44,7 +44,13 @@ const BillingPlanModal = ({ open, onClose }: IModalProps) => {
       scroll="body"
     >
       <DialogContent
-        sx={{ position: "relative", padding: "3.125rem 3.75rem !important" }}
+        sx={{
+          position: "relative",
+          padding: "2rem 1.25rem 1.5rem 1.25rem",
+          [`@media (min-width: 600px)`]: {
+            padding: "3.125rem 3.75rem 1.5rem 3.75rem",
+          },
+        }}
       >
         <IconButton
           aria-label="close"

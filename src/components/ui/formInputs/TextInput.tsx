@@ -8,6 +8,7 @@ interface ITextInputProps {
   placeholder?: string;
   type?: string;
   InputProps?: object;
+  rules?: object;
 }
 
 const TextInput = ({
@@ -17,11 +18,13 @@ const TextInput = ({
   type,
   InputProps,
   placeholder,
+  rules,
 }: ITextInputProps) => {
   return (
     <Controller
       name={name}
       control={control}
+      rules={rules}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <TextField
           helperText={error ? error.message : null}

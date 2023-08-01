@@ -20,6 +20,7 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
               main: "rgb(49, 45, 75)",
               light: "rgb(40, 36, 61)",
               dark: "rgb(128, 75, 223)",
+              "100": "rgba(231, 227, 252, 0.04)",
             },
             text: {
               primary: "rgba(231, 227, 252, 0.87)",
@@ -64,6 +65,7 @@ export const themeSettings = ({ mode }: IThemeState): ThemeOptions => {
               main: "rgb(255, 255, 255)",
               light: "rgb(244, 245, 250)",
               dark: "rgb(128, 75, 223)",
+              "100": "rgba(58, 53, 65, 0.04)",
             },
             text: {
               primary: "rgba(58, 53, 65, 0.87)",

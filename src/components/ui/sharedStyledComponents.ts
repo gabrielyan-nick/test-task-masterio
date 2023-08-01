@@ -13,16 +13,21 @@ import {
   DialogContent,
   DialogContentProps,
   DialogProps,
+  FormControl,
+  FormControlProps,
   FormLabel,
   FormLabelProps,
   Menu,
   MenuProps,
   Tab,
   TabProps,
+  TextField,
+  TextFieldProps,
   Typography,
   TypographyProps,
   styled,
 } from "@mui/material";
+import { DataGrid, DataGridProps } from "@mui/x-data-grid";
 
 export const FlexBox = styled(Box)<BoxProps>({
   display: "flex",
@@ -141,10 +146,10 @@ export const StyledDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
   "& .MuiModal-backdrop": {
     backgroundColor: theme.palette.grey[100],
   },
-  "& .MuiDialogContent-root": {
-    padding: "2rem 1.25rem 1.5rem 1.25rem",
+  "& .MuiDialogTitle-root": {
+    padding: "2rem 1.25rem 1.25rem",
     [`@media (min-width: 600px)`]: {
-      padding: "3.125rem 3.75rem 1.5rem 3.75rem",
+      padding: "3.125rem 3.75rem 1.25rem 3.75rem",
     },
   },
   "& .MuiDialogActions-root": {
@@ -174,3 +179,67 @@ export const StyledDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
   },
 }));
 
+export const StyledInput = styled(TextField)<TextFieldProps>(({ theme }) => ({
+  "& .MuiInputBase-root": {
+    borderRadius: "6px",
+  },
+  "& label": { color: "text.disabled" },
+  "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+    borderColor: theme.palette.text.secondary,
+  },
+  "&& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+    borderColor: theme.palette.primary.main,
+  },
+}));
+
+export const SelectWrapper = styled(FormControl)<FormControlProps>(
+  ({ theme }) => ({
+    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: theme.palette.text.secondary,
+    },
+    "&& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: theme.palette.primary.main,
+    },
+    "& svg": { color: theme.palette.disabled.main },
+    "& label": { color: theme.palette.text.disabled },
+  })
+);
+
+export const StyledDataGrid = styled(DataGrid)<DataGridProps>(({ theme }) => ({
+  border: "none",
+  minHeight: "161px",
+  "& .MuiDataGrid-columnHeaderCheckbox, .MuiDataGrid-cellCheckbox": {
+    maxWidth: "58px !important",
+    minWidth: "58px !important",
+  },
+  "& .MuiDataGrid-columnHeaderTitle": {
+    fontWeight: 600,
+    fontSize: "0.75rem",
+    letterSpacing: "0.17px",
+  },
+  "& .MuiCheckbox-root": {
+    color: theme.palette.primary,
+  },
+  "& .MuiDataGrid-columnHeaders": {
+    backgroundColor: theme.palette.primary.dark,
+  },
+  "& .MuiDataGrid-menuIcon > button": {
+    color: theme.palette.disabled.main,
+  },
+  "& .MuiDataGrid-columnHeader:not(.MuiDataGrid-columnHeaderCheckbox)": {
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+  },
+  "& .MuiDataGrid-cell:not(.MuiDataGrid-cellCheckbox)": {
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+  },
+  "& .MuiDataGrid-cell:focus-within, .MuiDataGrid-columnHeader:focus-within": {
+    outline: "none",
+  },
+  [`@media (min-width: 1200px)`]: {
+    "& .MuiDataGrid-virtualScroller": {
+      overflow: "hidden",
+    },
+  },
+}));

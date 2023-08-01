@@ -1,11 +1,12 @@
 import { MenuItem, FormControl, InputLabel, Select } from "@mui/material";
 import { Control, Controller } from "react-hook-form";
+import { SelectWrapper } from "../sharedStyledComponents";
 
 interface ISelectProps {
   name: string;
   label: string;
   defaultValue: number;
-  control: Control<any>;
+  control?: Control<any>;
   data: { value: string; label: string }[];
 }
 
@@ -19,19 +20,7 @@ const SelectInput = ({
   const labelId = `${name}-label`;
 
   return (
-    <FormControl
-      fullWidth
-      sx={{
-        "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-          borderColor: "text.secondary",
-        },
-        "&& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-          borderColor: "rgb(145, 85, 253)",
-        },
-        "& svg": { color: "disabled.main" },
-        "& label": { color: "text.disabled" },
-      }}
-    >
+    <SelectWrapper fullWidth>
       <InputLabel id={labelId}>{label}</InputLabel>
       <Controller
         name={name}
@@ -55,7 +44,7 @@ const SelectInput = ({
           </Select>
         )}
       />
-    </FormControl>
+    </SelectWrapper>
   );
 };
 export default SelectInput;

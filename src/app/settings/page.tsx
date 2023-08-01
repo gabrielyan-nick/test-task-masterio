@@ -12,8 +12,10 @@ import { PersonOutline, BookmarkBorderOutlined } from "@mui/icons-material";
 import AccountForm from "@/components/ui/AccountForm";
 
 import DeleteAccountForm from "@/components/ui/DeleteAccountForm";
-import BillingPlan from "@/components/ui/BillingPlan";
+import BillingPlan from "@/components/ui/billingPlan/BillingPlan";
 import PaymentMethod from "@/components/ui/paymentMethod/PaymentMethod";
+import BillingAdressForm from "@/components/ui/BillingAdressForm";
+import BillingHistoryTable from "@/components/ui/billingHistoryTable/BillingHistoryTable";
 
 export default function SettingsPage() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -58,6 +60,8 @@ export default function SettingsPage() {
           <>
             <BillingPlan />
             <PaymentMethod />
+            <BillingAdressForm />
+            <BillingHistoryTable/>
           </>
         )}
       </Wrapper>

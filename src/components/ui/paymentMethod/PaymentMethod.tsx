@@ -3,25 +3,27 @@
 import React, { useState } from "react";
 import Cards, { Focused } from "react-credit-cards-2";
 import {
-  ContentHeader,
-  ContentWrapper,
-  WrapperBg,
-} from "../sharedStyledComponents";
-import {
   Box,
   FormControlLabel,
   FormLabel,
   Grid,
   Radio,
   RadioGroup,
+  Stack,
   Switch,
-  TextField,
-  TextFieldProps,
-  styled,
+  Typography,
 } from "@mui/material";
+import {
+  StyledInput,
+  ContentHeader,
+  ContentWrapper,
+  WrapperBg,
+} from "../sharedStyledComponents";
 import BtnContained from "../BtnContained";
 import BtnOutline from "../BtnOutline";
 import { usePostDataMutation } from "@/api/dataApi";
+import PaymentCard from "./PaymentCard";
+import { cardExpiryFormat, cardNumberFormat } from "@/utils/cardInputs";
 
 export interface ICardInputs {
   number: string;
@@ -29,17 +31,8 @@ export interface ICardInputs {
   cvc: string;
   name: string;
   focus?: string;
+  status?: string;
 }
-
-const CardInput = styled(TextField)<TextFieldProps>(({ theme }) => ({
-  "& label": { color: "text.disabled" },
-  "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-    borderColor: theme.palette.text.secondary,
-  },
-  "&& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-    borderColor: theme.palette.primary.main,
-  },
-}));
 
 const PaymentMethod = () => {
   const [paymentMethod, setPaymentMethod] = useState("card");
@@ -61,10 +54,7 @@ const PaymentMethod = () => {
     const { name, value } = e.target;
     setValues((prev) => ({
       ...prev,
-      [name]: value
-        .replace(/[^0-9]/gi, "")
-        .replace(/(.{4})/g, "$1 ")
-        .trim(),
+      [name]: cardNumberFormat(value),
     }));
   };
 
@@ -79,35 +69,7 @@ const PaymentMethod = () => {
   const handleExpirationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues((prev) => ({
       ...prev,
-      expiry: e.target.value
-        .replace(
-          /^([1-9]\/|[2-9])$/g,
-          "0$1/" // 3 > 03/
-        )
-        .replace(
-          /^(0[1-9]|1[0-2])$/g,
-          "$1/" // 11 > 11/
-        )
-        .replace(
-          /^([0-1])([3-9])$/g,
-          "0$1/$2" // 13 > 01/3
-        )
-        .replace(
-          /^(0?[1-9]|1[0-2])([0-9]{2})$/g,
-          "$1/$2" // 141 > 01/41
-        )
-        .replace(
-          /^([0]+)\/|[0]+$/g,
-          "0" // 0/ > 0 and 00 > 0
-        )
-        .replace(
-          /[^\d\/]|^[\/]*$/g,
-          "" // To allow only digits and `/`
-        )
-        .replace(
-          /\/\//g,
-          "/" // Prevent entering more than 1 `/`
-        ),
+      expiry: cardExpiryFormat(e.target.value),
     }));
   };
 
@@ -167,7 +129,7 @@ const PaymentMethod = () => {
                     </Box>
                   </Grid>
                   <Grid item xs={12}>
-                    <CardInput
+                    <StyledInput
                       name="number"
                       label="Card Number"
                       variant="outlined"
@@ -177,11 +139,11 @@ const PaymentMethod = () => {
                       value={values.number}
                       fullWidth
                       autoComplete="off"
-                      inputProps={{ maxLength: 23 }}
+                      inputProps={{ maxLength: 19 }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <CardInput
+                    <StyledInput
                       name="name"
                       label="Name on Card"
                       variant="outlined"
@@ -194,7 +156,7 @@ const PaymentMethod = () => {
                     />
                   </Grid>
                   <Grid item xs={6} sm={3}>
-                    <CardInput
+                    <StyledInput
                       name="expiry"
                       label="Expiry"
                       variant="outlined"
@@ -207,7 +169,7 @@ const PaymentMethod = () => {
                     />
                   </Grid>
                   <Grid item xs={6} sm={3}>
-                    <CardInput
+                    <StyledInput
                       name="cvc"
                       label="CVC"
                       variant="outlined"
@@ -238,7 +200,27 @@ const PaymentMethod = () => {
               )}
             </Grid>
           </Grid>
-          <Grid item xs={12} md={6}></Grid>
+
+          <Grid item xs={12} md={6}>
+            <Typography mb="1rem" fontWeight={500}>
+              My Cards
+            </Typography>
+            <Stack direction="column" gap="1rem">
+              <PaymentCard
+                name="Tom McBride"
+                number="5577 0000 5577 9865"
+                expiry="12/24"
+                cvc=""
+                isPrimary
+              />
+              <PaymentCard
+                name="Mildred Wagner"
+                number="4532 3616 2070 5678"
+                expiry="02/24"
+                cvc=""
+              />
+            </Stack>
+          </Grid>
           <Grid item xs={12} mt="8px">
             <BtnContained sx={{ marginRight: "1rem" }} onClick={submitForm}>
               Save changes

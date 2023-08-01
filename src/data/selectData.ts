@@ -78,3 +78,19 @@ export const currency = [
   { value: "Pound", label: "Pound" },
   { value: "Bitcoin", label: "Bitcoin" },
 ];
+
+export const cardStatus = [
+  { value: "Primary", label: "Primary" },
+  { value: "Expired", label: "Expired" },
+  { value: "Active", label: "Active" },
+];
+
+export const invoiceStatus = [
+  { value: "", label: "none" },
+  { value: "Downloaded", label: "Downloaded" },
+  { value: "Draft", label: "Draft" },
+  { value: "Paid", label: "Paid" },
+  { value: "Partial Payment", label: "Partial Payment" },
+  { value: "Past Due", label: "Past Due" },
+  { value: "Sent", label: "Sent" },
+];
