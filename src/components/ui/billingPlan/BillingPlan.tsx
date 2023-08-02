@@ -89,7 +89,7 @@ const BillingPlan = () => {
                     label="Popular"
                     size="small"
                     sx={{
-                      backgroundColor: "primary.300",
+                      backgroundColor: "primary.100",
                       color: "primary.main",
                     }}
                   />
@@ -105,7 +105,7 @@ const BillingPlan = () => {
                 onClose={() => {}}
                 sx={{
                   marginBottom: "1.5rem",
-                  backgroundColor: "warning.light",
+                  backgroundColor: "warning.100",
                   "& .MuiAlert-message, .MuiAlert-icon, .MuiAlert-action": {
                     color: "warning.dark",
                   },

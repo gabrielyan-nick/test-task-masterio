@@ -16,8 +16,8 @@ import {
   LinkProps,
   IconButtonProps,
 } from "@mui/material";
-import React, { Fragment, useState } from "react";
-import { LogoIcon } from "../icons";
+import React, { useState } from "react";
+import { LogoIcon } from "./icons";
 import {
   Search,
   Translate,
@@ -47,11 +47,11 @@ const HeaderContainer = styled(Wrapper)({
 
 const Header = styled(AppBar)<AppBarProps>(({ theme }) => ({
   minHeight: "64px",
-  boxShadow: "rgba(19, 17, 32, 0.42) 0px 4px 8px -4px",
   zIndex: 10,
-  backgroundColor: theme.palette.primary.light,
   backdropFilter: "blur(8px)",
   justifyContent: "center",
+  backgroundColor: theme.palette.primary.light,
+  boxShadow: "rgba(19, 17, 32, 0.42) 0px 4px 8px -4px",
 }));
 
 const LogoLink = styled(Link)<LinkProps>(({ theme }) => ({
@@ -70,7 +70,7 @@ const StyledMenu = styled(Menu)<MenuProps>(({ theme }) => ({
   marginTop: "50px",
   "& .MuiMenu-paper": { borderRadius: "5px" },
   "& ul": {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.background.paper,
     padding: "8px 0",
   },
   "& li": { width: "230px", padding: "0.5rem 1rem" },

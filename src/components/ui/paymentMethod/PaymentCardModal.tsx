@@ -39,7 +39,7 @@ const PaymentCardModal = ({
   expiry,
   cvc,
   setValues,
-  status
+  status,
 }: IPaymentCardModalProps) => {
   const handleInputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -147,7 +147,7 @@ const PaymentCardModal = ({
                       MenuProps={{
                         sx: {
                           "& .MuiList-root": {
-                            backgroundColor: "secondary.main",
+                            backgroundColor: "background.paper",
                           },
                         },
                       }}

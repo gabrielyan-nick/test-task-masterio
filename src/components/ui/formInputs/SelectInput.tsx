@@ -33,7 +33,9 @@ const SelectInput = ({
             onChange={onChange}
             value={value}
             MenuProps={{
-              sx: { "& .MuiList-root": { backgroundColor: "secondary.main" } },
+              sx: {
+                "& .MuiList-root": { backgroundColor: "background.paper" },
+              },
             }}
           >
             {data.map((item) => (

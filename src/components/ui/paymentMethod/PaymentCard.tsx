@@ -13,7 +13,7 @@ export interface IPaymentCardProps extends ICardInputs {
 }
 
 const CardBox = styled(Box)<BoxProps>(({ theme }) => ({
-  backgroundColor: theme.palette.secondary[100],
+  backgroundColor: theme.palette.secondary[200],
   padding: "1.25rem",
   borderRadius: "6px",
   display: "flex",
@@ -74,7 +74,7 @@ const PaymentCard = ({
                 label="Primary"
                 size="small"
                 sx={{
-                  backgroundColor: "primary.300",
+                  backgroundColor: "primary.100",
                   color: "primary.main",
                   marginLeft: "1rem",
                 }}
@@ -90,7 +90,7 @@ const PaymentCard = ({
             sx={{
               marginRight: "1rem",
               color: "primary.main",
-              borderColor: "primary.100",
+              borderColor: "primary.300",
               "&:hover": {
                 borderColor: "primary.main",
                 backgroundColor: "primary.200",

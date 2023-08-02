@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ContentWrapper,
   Main,
   StyledTab,
   Wrapper,
@@ -10,7 +9,6 @@ import { Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { PersonOutline, BookmarkBorderOutlined } from "@mui/icons-material";
 import AccountForm from "@/components/ui/AccountForm";
-
 import DeleteAccountForm from "@/components/ui/DeleteAccountForm";
 import BillingPlan from "@/components/ui/billingPlan/BillingPlan";
 import PaymentMethod from "@/components/ui/paymentMethod/PaymentMethod";
@@ -61,7 +59,7 @@ export default function SettingsPage() {
             <BillingPlan />
             <PaymentMethod />
             <BillingAdressForm />
-            <BillingHistoryTable/>
+            <BillingHistoryTable />
           </>
         )}
       </Wrapper>

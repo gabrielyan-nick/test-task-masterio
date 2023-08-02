@@ -3,15 +3,12 @@
 import { useGetDataQuery } from "@/api/dataApi";
 import ActivityTimeline from "@/components/ui/ActivityTimeline";
 import ConnectionsList from "@/components/ui/ConnectionsList";
-import DataList from "@/components/ui/ConnectionsList";
 import ProjectsTable from "@/components/ui/projectsTable/ProjectsTable";
 import TeamsList from "@/components/ui/TeamsList";
 import UserCard from "@/components/ui/UserCard";
 import UserInfo from "@/components/ui/UserInfo";
-import { Main, Wrapper, WrapperBg } from "@/components/ui/sharedStyledComponents";
-import { IData } from "@/types/data.types";
+import { Main, Wrapper } from "@/components/ui/sharedStyledComponents";
 import { Grid } from "@mui/material";
-import { useEffect } from "react";
 
 export default function Home() {
   const { data, isLoading } = useGetDataQuery();

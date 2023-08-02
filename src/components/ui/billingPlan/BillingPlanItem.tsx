@@ -59,7 +59,7 @@ const StyledChip = styled(Chip)<ChipProps>(({ theme }) => ({
   position: "absolute",
   top: "12px",
   right: "12px",
-  backgroundColor: theme.palette.primary[300],
+  backgroundColor: theme.palette.primary[100],
   color: theme.palette.primary.main,
   "& .MuiChip-label": {
     padding: "0 0.4375rem",
@@ -81,7 +81,7 @@ const BillingPlanItem = ({
 }: IBillingPlanItemProps) => {
   return (
     <ItemBox
-      sx={{ borderColor: isPopular ? "rgba(145, 85, 253, 0.5)" : "info.light" }}
+      sx={{ borderColor: isPopular ? "primary.300" : "info.light" }}
     >
       {isPopular && <StyledChip label="Popular" size="small" />}
       <FlexCentredBox mb="1.25rem">
@@ -154,7 +154,7 @@ const BillingPlanItem = ({
         <BtnOutline
           sx={{
             color: "success.main",
-            borderColor: "success.100",
+            borderColor: "success.300",
             "&:hover": {
               borderColor: "success.main",
               backgroundColor: "success.light",
@@ -170,7 +170,7 @@ const BillingPlanItem = ({
         <BtnOutline
           sx={{
             color: "primary.main",
-            borderColor: "primary.100",
+            borderColor: "primary.300",
             "&:hover": {
               borderColor: "primary.main",
               backgroundColor: "primary.200",

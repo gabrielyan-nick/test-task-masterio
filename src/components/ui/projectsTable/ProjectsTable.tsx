@@ -7,7 +7,7 @@ import {
   StyledDataGrid,
 } from "../sharedStyledComponents";
 import { Typography, useMediaQuery } from "@mui/material";
-import { DataGrid, DataGridProps, GridColDef } from "@mui/x-data-grid";
+import { GridColDef } from "@mui/x-data-grid";
 import NameCell from "./NameCell";
 import TeamCell from "./TeamCell";
 import ActionsCell from "./ActionsCell";

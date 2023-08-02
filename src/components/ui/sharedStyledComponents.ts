@@ -73,7 +73,7 @@ export const Main = styled("main")(({ theme }) => ({
 }));
 
 export const WrapperBg = styled(Card)<CardProps>(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: theme.palette.background.paper,
   backgroundImage: "none",
   borderRadius: "6px",
   boxShadow: "rgba(58, 53, 65, 0.1) 0px 2px 10px 0px",
@@ -110,7 +110,8 @@ export const ActionsMenu = styled(Menu)<MenuProps>(({ theme }) => ({
   marginTop: "35px",
   "& .MuiMenu-paper": { borderRadius: "5px" },
   "& ul": {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.background.paper,
+  
   },
   "& .MuiDivider-root": {
     margin: "4px 0",
@@ -134,7 +135,7 @@ export const StyledTab = styled(Tab)<TabProps>(({ theme }) => ({
 export const StyledDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
   "& .MuiDialog-paper": {
     borderRadius: "6px",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.background.paper,
     backgroundImage: "none",
     boxShadow: "rgba(58, 53, 65, 0.1) 0px 2px 10px 0px",
     [`@media (max-width: 600px)`]: {

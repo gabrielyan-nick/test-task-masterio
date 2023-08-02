@@ -56,9 +56,18 @@ const ConnectionsList = ({
                 </Typography>
               </div>
             </FlexBox>
-            <ToggleFriendBtn variant={item.isFriend ? "contained" : "outlined"}>
+            <ToggleFriendBtn
+              variant={item.isFriend ? "contained" : "outlined"}
+              sx={{
+                "&:hover": {
+                  backgroundColor: item.isFriend
+                    ? "secondary.dark"
+                    : "transparent",
+                },
+              }}
+            >
               <PermIdentityOutlinedIcon
-                color={item.isFriend ? "inherit" : "success"}
+                color={item.isFriend ? "inherit" : "primary"}
               />
             </ToggleFriendBtn>
           </FlexBetweenBox>
