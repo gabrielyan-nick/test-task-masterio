@@ -111,7 +111,6 @@ export const ActionsMenu = styled(Menu)<MenuProps>(({ theme }) => ({
   "& .MuiMenu-paper": { borderRadius: "5px" },
   "& ul": {
     backgroundColor: theme.palette.background.paper,
-  
   },
   "& .MuiDivider-root": {
     margin: "4px 0",
@@ -201,6 +200,7 @@ export const SelectWrapper = styled(FormControl)<FormControlProps>(
     "&& .Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: theme.palette.primary.main,
     },
+    // @ts-ignore
     "& svg": { color: theme.palette.disabled.main },
     "& label": { color: theme.palette.text.disabled },
   })
