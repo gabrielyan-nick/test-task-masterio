@@ -135,6 +135,7 @@ const BillingPlanItem = ({
       <Box mb="1.25rem">
         <Stack component="ul" direction="column" gap="1rem">
           {list.map((item, i) => (
+            // @ts-ignore
             <FlexBox key={i} component="li" gap="0.5rem" alignItems="center">
               <FiberManualRecordOutlined
                 sx={{ color: "text.disabled", width: "15px", height: "15px" }}
