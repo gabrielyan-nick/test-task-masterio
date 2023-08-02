@@ -1,4 +1,4 @@
-import { IData, IPropValIcon } from "@/types/data.types";
+import { IData, IListItemData } from "@/types/data.types";
 import React from "react";
 import {
   ContentWrapper,
@@ -19,10 +19,10 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 
 interface IUserInfoProps {
-  about: IPropValIcon[] | undefined;
-  contacts: IPropValIcon[] | undefined;
-  teams: IPropValIcon[] | undefined;
-  overview: IPropValIcon[] | undefined;
+  about: IListItemData[] | undefined;
+  contacts: IListItemData[] | undefined;
+  teams: IListItemData[] | undefined;
+  overview: IListItemData[] | undefined;
 }
 
 const DataBox = styled(Box)({
@@ -85,7 +85,7 @@ const UserInfo = ({ about, contacts, teams, overview }: IUserInfoProps) => {
 };
 
 interface IDataBlockProps {
-  dataArr: IPropValIcon[] | undefined;
+  dataArr: IListItemData[] | undefined;
   title: string;
 }
 

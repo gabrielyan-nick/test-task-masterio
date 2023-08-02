@@ -1,4 +1,4 @@
-import { TButtonColors, TChipColors } from "./theme.types";
+import { TChipColors } from "./theme.types";
 
 export interface IData {
   about: IListItemData[];
