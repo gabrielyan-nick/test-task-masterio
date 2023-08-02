@@ -7,7 +7,7 @@ import {
   Text600,
   WrapperBg,
 } from "./sharedStyledComponents";
-import { Box, CardContent, Typography, styled } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";

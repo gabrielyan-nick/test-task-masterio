@@ -9,11 +9,7 @@ import {
   TypographyProps,
   styled,
 } from "@mui/material";
-import {
-  FlexBox,
-  FlexCentredBox,
-  TextLight,
-} from "../sharedStyledComponents";
+import { FlexBox, FlexCentredBox, TextLight } from "../sharedStyledComponents";
 import { FiberManualRecordOutlined } from "@mui/icons-material";
 import { _clientUrl } from "@/constants";
 import BtnOutline from "../BtnOutline";
@@ -59,7 +55,7 @@ const StyledChip = styled(Chip)<ChipProps>(({ theme }) => ({
   position: "absolute",
   top: "12px",
   right: "12px",
-  backgroundColor: theme.palette.primary[100],
+  backgroundColor: theme.palette.primary["100"],
   color: theme.palette.primary.main,
   "& .MuiChip-label": {
     padding: "0 0.4375rem",
@@ -80,9 +76,7 @@ const BillingPlanItem = ({
   isPopular = false,
 }: IBillingPlanItemProps) => {
   return (
-    <ItemBox
-      sx={{ borderColor: isPopular ? "primary.300" : "info.light" }}
-    >
+    <ItemBox sx={{ borderColor: isPopular ? "primary.300" : "info.light" }}>
       {isPopular && <StyledChip label="Popular" size="small" />}
       <FlexCentredBox mb="1.25rem">
         <img
