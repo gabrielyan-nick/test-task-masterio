@@ -13,6 +13,7 @@ export interface IPaymentCardProps extends ICardInputs {
 }
 
 const CardBox = styled(Box)<BoxProps>(({ theme }) => ({
+  // @ts-ignore
   backgroundColor: theme.palette.secondary[200],
   padding: "1.25rem",
   borderRadius: "6px",
