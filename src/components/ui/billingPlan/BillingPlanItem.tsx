@@ -55,7 +55,7 @@ const StyledChip = styled(Chip)<ChipProps>(({ theme }) => ({
   position: "absolute",
   top: "12px",
   right: "12px",
-  backgroundColor: theme.palette.primary["100"],
+  backgroundColor: "rgba(145, 85, 253, 0.12)",
   color: theme.palette.primary.main,
   "& .MuiChip-label": {
     padding: "0 0.4375rem",
