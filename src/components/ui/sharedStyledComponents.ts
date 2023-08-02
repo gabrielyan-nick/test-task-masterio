@@ -225,6 +225,7 @@ export const StyledDataGrid = styled(DataGrid)<DataGridProps>(({ theme }) => ({
     backgroundColor: theme.palette.primary.dark,
   },
   "& .MuiDataGrid-menuIcon > button": {
+    // @ts-ignore
     color: theme.palette.disabled.main,
   },
   "& .MuiDataGrid-columnHeader:not(.MuiDataGrid-columnHeaderCheckbox)": {
